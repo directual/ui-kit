@@ -1,7 +1,7 @@
 UI Kit for Directual ❤
 ## Demo & Documentation
 
-### `https://storybook-js.directual.app/`
+### [UI Kit Storybook](https://storybook-js.directual.app/)
 
 ## Available Scripts
 
