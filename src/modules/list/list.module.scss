@@ -1,0 +1,44 @@
+@import '../../lib/styles/vars.scss';
+
+.scroll-bar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: RGB($GRAY);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    height: 10px;
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+.list {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  background-color: RGB($WHITE);
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  &.wrapper {
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+  }
+  @extend .scroll-bar;
+}
+.list-padding {
+  padding-left: 16px;
+}

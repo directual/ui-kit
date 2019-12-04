@@ -1,0 +1,109 @@
+@import "../../lib/styles/vars.scss";
+
+@mixin with-box($color, $thickness, $opacity: 1) {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: solid $thickness RGBA($color, $opacity);
+  box-sizing: border-box;
+  height: calc(24px * 2);
+  box-shadow: 0 0 0 $thickness $color inset;
+  border-radius: $BORDER_RADIUS;
+}
+
+@mixin with-input($text-color) {
+  input[type="text"], input[type="number"], input[type="password"], textarea {
+    flex: 1;
+    width: 100%;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: RGB($text-color);
+    border: none;
+    outline: none;
+    caret-color: RGB($ACCENT);
+    background: none;
+    box-sizing: border-box;
+    opacity: 1;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &::placeholder {
+      font-family: Lato;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      color: RGB($GRAY);
+    }
+  }
+  input[disabled], textarea[disabled] {
+    -webkit-text-fill-color: RGB($GRAY);
+    -webkit-opacity: 1;
+    color: RGB($GRAY);
+  }
+}
+
+@mixin with-close($color) {
+  .close {
+    position: relative;
+    margin-right: -16px;
+    color: RGB($color);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+}
+
+@mixin without-close() {
+  .close {
+    display: none;
+  }
+}
+
+@mixin with-search($color) {
+  .search {
+    position: relative;
+    margin-left: -16px;
+    color: RGB($color);
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@mixin without-search() {
+  .search {
+    display: none;
+  }
+}
+
+@mixin with-placeholder($left) {
+  .text-input-placeholder {
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: RGB($GRAY);
+    position: absolute;
+    z-index: -1;
+    left: $left;
+  }
+}
+
+@mixin with-textarea-placeholder($left, $margin) {
+  @include with-placeholder(calc(#{$left} - #{$margin}));
+  .text-input-placeholder {
+    top: calc(#{$left} - #{$margin} - 3px);
+  }
+}

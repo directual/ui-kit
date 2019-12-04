@@ -1,0 +1,345 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+
+$border: 2px;
+$tree-node-padding: 4px;
+
+// ant default variables
+$primary-color: RGB($ACCENT);
+$highlight-color: #f5222d;
+$text-color: fade(#000, 65%);
+
+$tree-title-height: 24px;
+$tree-child-padding: 24px;
+
+$item-hover-bg: tint($primary-color, 90%);
+$border-radius-sm: 2px;
+$border-color-base: hsv(0, 0, 85%);
+$disabled-color: fade(#000, 25%);
+
+@mixin treeSwitcherIcon() {
+  .directual-tree-switcher-icon,
+  .directual-select-switcher-icon {
+    display: inline-block;
+    font-weight: bold;
+
+    svg {
+      transition: transform 0.3s;
+    }
+  }
+}
+
+.option-group-name {
+ padding: 0 15px !important;
+ height: 32px;
+ @extend .Comment_12-16;
+ display: flex;
+ align-items: center;
+ min-height: 32px;
+}
+
+// @mixin antTreeShowLineIcon($type) {
+//   .directual-tree-switcher-icon,
+//   .directual-select-switcher-icon {
+//     display: inline-block;
+//     font-weight: normal;
+//     font-size: 12px;
+//     svg {
+//       transition: transform 0.3s;
+//     }
+//   }
+// }
+
+.checkbox-storybook {
+  align-items: flex-start !important;
+}
+
+.checkable-tree-option-wrapper {
+  height: 23px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.checkable-tree-option-multiline-wrapper {
+  top: 4px;
+  height: 46px;
+  z-index: -1;
+}
+
+.directual-tree {
+  /* see https://github.com/ant-design/ant-design/issues/16259 */
+  &-checkbox-checked::after {
+    position: absolute;
+    top: 16.67%;
+    left: 0;
+    width: 100%;
+    height: 66.67%;
+  }
+
+  // .reset-component;
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    list-style: none;
+    outline: 0;
+    span[draggable],
+    span[draggable='true'] {
+      line-height: $tree-title-height - 4px;
+      border-top: 2px transparent solid;
+      border-bottom: 2px transparent solid;
+      user-select: none;
+      /* Required to make elements draggable in old WebKit */
+      -khtml-user-drag: element;
+      -webkit-user-drag: element;
+    }
+    &.drag-over {
+      > span[draggable] {
+        color: white;
+        background-color: $primary-color;
+        opacity: 0.8;
+      }
+    }
+    &.drag-over-gap-top {
+      > span[draggable] {
+        border-top-color: $primary-color;
+      }
+    }
+    &.drag-over-gap-bottom {
+      > span[draggable] {
+        border-bottom-color: $primary-color;
+      }
+    }
+    &.filter-node {
+      > span {
+        color: $highlight-color !important;
+        font-weight: 500 !important;
+      }
+    }
+
+    // When node is loading
+    &.directual-tree-treenode-loading {
+      span {
+        &.directual-tree-switcher {
+          &.directual-tree-switcher_open,
+          &.directual-tree-switcher_close {
+            .directual-tree-switcher-loading-icon {
+              position: absolute;
+              left: 0;
+              display: inline-block;
+              width: 24px;
+              height: $tree-title-height;
+              color: $primary-color;
+              font-size: 14px;
+              transform: none;
+              svg {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+              }
+            }
+
+            :root &::after {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+      position: relative;
+      margin-left: $tree-child-padding;
+    }
+
+    .directual-tree-node-content-wrapper {
+      display: inline-block;
+      min-height: 32px;
+      height: auto;
+      //width: calc(100% - 24px);
+      min-width: 100%;
+      margin: 0;
+      padding: 0;
+      line-height: $tree-title-height;
+      text-decoration: none;
+      vertical-align: top;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-sizing: border-box;
+      left: 0px;
+
+      &:hover {
+        background-color: $item-hover-bg;
+      }
+
+      &.directual-tree-node-selected {
+        background-color: transparent;
+      }
+
+      & .checkbox-storybook {
+        padding-left: 36px !important;
+      }
+
+      & .directual-tree-title {
+        & .option-wrapper > * {
+          width: 100%;
+          padding-left: 38px;
+        }
+        & .checkbox-storybook {
+          padding-left: 3px;
+        }
+      }
+    }
+
+    span {
+      &.directual-tree-checkbox {
+        top: initial;
+        height: $tree-title-height;
+        margin: 0 4px 0 2px;
+        padding: (($tree-title-height - 16px) / 2) 0;
+
+        + .directual-tree-node-content-wrapper {
+          width: calc(100% - 46px);
+        }
+      }
+
+      &.directual-tree-switcher,
+      &.directual-tree-iconEle {
+        display: inline-block;
+        width: 24px;
+        height: $tree-title-height;
+        margin: 0;
+        line-height: $tree-title-height;
+        text-align: center;
+        vertical-align: top;
+        border: 0 none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      &.directual-tree-switcher {
+        margin-left: 8px;
+        z-index: 100;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        color: RGB($GRAY);
+
+        & .directual-tree-switcher-icon {
+          position: relative;
+          z-index: 100;
+
+          &.multiline-switcher-icon {
+            top: 8px;
+          }
+        }
+
+        &.directual-tree-switcher-noop {
+          cursor: default;
+        }
+
+        &.directual-tree-switcher_open {
+          @include treeSwitcherIcon();
+        }
+
+        &.directual-tree-switcher_close {
+          @inculde treeSwitcherIcon();
+
+          .directual-tree-switcher-icon {
+            
+            svg {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child > span {
+      &.directual-tree-switcher,
+      &.directual-tree-iconEle {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // li&-treenode-disabled {
+  //   > span:not(.directual-tree-switcher),
+  //   > .directual-tree-node-content-wrapper,
+  //   > .directual-tree-node-content-wrapper span {
+  //     color: $disabled-color;
+  //     cursor: not-allowed;
+  //   }
+  //   > .directual-tree-node-content-wrapper:hover {
+  //     background: transparent;
+  //   }
+  // }
+
+  &-icon__open {
+    margin-right: 2px;
+    vertical-align: top;
+  }
+  &-icon__close {
+    margin-right: 2px;
+    vertical-align: top;
+  }
+  // Tree with line
+  // &&-show-line {
+  //   li {
+  //     position: relative;
+  //     span {
+  //       &.directual-tree-switcher {
+  //         color: @tree-showline-icon-color;
+  //         background: @component-background;
+  //         &.directual-tree-switcher-noop {
+  //           .antTreeShowLineIcon('tree-doc-icon');
+  //         }
+  //         &.directual-tree-switcher_open {
+  //           .antTreeShowLineIcon('tree-showline-open-icon');
+  //         }
+  //         &.directual-tree-switcher_close {
+  //           .antTreeShowLineIcon('tree-showline-close-icon');
+  //         }
+  //       }
+  //     }
+  //   }
+  li:not(:last-child)::before {
+    position: absolute;
+    left: 12px;
+    width: 1px;
+    height: 100%;
+    height: calc(100% - 22px); // Remove additional height if support
+    margin: 22px 0 0;
+    border-left: 1px solid $border-color-base;
+    content: ' ';
+  }
+}
+
+.directual-tree-icon-hide {
+  .directual-tree-treenode-loading {
+    .directual-tree-iconEle {
+      display: none;
+    }
+  }
+}

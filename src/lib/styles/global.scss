@@ -1,0 +1,44 @@
+@import './fonts.scss';
+@import './fontClasses.scss';
+
+#root {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+
+button,
+input {
+  overflow: visible;
+}
+
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+p,
+a {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,18 @@
+@import "../../lib/styles/vars";
+
+.placeholder {
+  pointer-events: none;
+  position: absolute;
+  left: 24px;
+  top: 12px;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: RGB($GRAY);
+  height: 24px;
+  padding-top: 4px;
+}

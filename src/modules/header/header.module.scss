@@ -1,0 +1,14 @@
+@import "../../lib/styles/vars";
+@import "../fonts-example/Fonts";
+
+.header {
+  height: 48px;
+  display: flex;
+  .headerInner {
+    padding: 4px 0;
+    height: 40px;
+  }
+  .headerBadge {
+    padding: 8px 0 8px 8px;
+  }
+}

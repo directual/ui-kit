@@ -1,0 +1,138 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.card-default {
+  @extend .border-radius;
+  @include border(1px, $GRAY, 0.75);
+  width: 100%;
+  @extend .bg-color-white;
+  .card-image-wrapper {
+    position: relative;
+    width: calc(100% - 0.1px);
+    .border-bug-fix {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 150px;
+      width: 100%;
+      background-color: RGBA($GRAY, 0.75);
+      border-radius: calc(#{$BORDER_RADIUS} - 1px);
+    }
+    .card-image {
+      position: relative;
+      border-top-left-radius: $BORDER_RADIUS;
+      border-top-right-radius: $BORDER_RADIUS;
+      height: 223px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //background-image: none !important;
+      .card-short-name {
+        color: RGB($WHITE);
+        text-transform: uppercase;
+        @extend .Header_32-40_Black;
+        text-align: center;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .card-icon {
+        height: 128px;
+        width: 128px;
+        color: RGB($WHITE);
+
+        & .card-icon-inner {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .card-content-wrapper {
+    padding: 24px 32px 0 32px;
+    .card-header {
+      position: relative;
+      overflow: hidden;
+      max-height: 162px;
+      display: block;
+      .line-clamp {
+        @extend .Header_32-40_Black;
+      }
+      .badge-wrapper {
+        margin-left: 8px;
+        position: relative;
+        display: initial;
+        bottom: 4px;
+      }
+      .badge-fixed {
+        position: absolute;
+        right: 0;
+      }
+      .badge-fixed::before {
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 50%;
+        right: 50%;
+        background-color: RGB($WHITE);
+      }
+      .badge-fixed::after {
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 120px;
+        right: 100%;
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), RGB($WHITE));
+      }
+    }
+
+    .header-comment {
+      @extend .Comment_12-16;
+      margin-bottom: 8px;
+    }
+    .card-text {
+      @extend .Text_14-24_Black;
+      margin-bottom: 16px;
+    }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .actions-container-wrapper {
+      width: 100%;
+      //height: auto;
+      .actions-container {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        border-top: 1px solid RGB($GRAY);
+        position: relative;
+        align-items: center;
+        .expand {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+  .expand-content {
+    background-color: RGBA($GRAY, 0.25);
+    border-bottom-left-radius: $BORDER_RADIUS;
+    border-bottom-right-radius: $BORDER_RADIUS;
+  }
+}
+
+.card-default:hover {
+  @include border(1px, $SECONDARY);
+  box-shadow: 0 0 0 1px RGB($SECONDARY);
+}
+
+.card-default:hover .card-image-wrapper .border-bug-fix {
+  background-color: RGB($SECONDARY);
+  box-shadow: 0px 0px 0px 2px RGB($SECONDARY);
+}

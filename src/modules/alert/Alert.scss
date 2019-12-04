@@ -1,0 +1,56 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+
+.alert-body {
+  width: auto;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @extend .border-radius;
+  @include bgOpacity($GRAY, $OPACITY25);
+
+
+  .alert-icon {
+    height: 32px;
+    width: 32px;
+    margin: 8px;
+  }
+
+  .alert-icon-main {
+    @extend .color-black;
+  }
+
+  .alert-icon-close {
+    @extend .color-gray;
+    cursor: pointer;
+  }
+
+  .alert-text-block {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 66px);
+    .alert-header {
+      margin-top: 12px;
+      @extend .Subheader_14-24_Black;
+    }
+    .alert-text {
+      margin-bottom: 12px;
+      @extend .Text_14-24_Black;
+    }
+  }
+}
+.info-alert {
+  @include bgOpacity($GREEN, $OPACITY25);
+}
+.warning-alert {
+  @include bgOpacity($ORANGE, $OPACITY25);
+}
+.error-alert {
+  @include bgOpacity($RED, $OPACITY25);
+}
+.default-alert {
+  @include bgOpacity($GRAY, $OPACITY25);
+}

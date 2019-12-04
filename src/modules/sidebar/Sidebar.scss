@@ -1,0 +1,7 @@
+@import "../color-palette/color-palette.scss";
+
+
+.str-active-nav {
+  @extend .color-white;
+  @extend .bg-color-black;
+}

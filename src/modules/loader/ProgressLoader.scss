@@ -1,0 +1,19 @@
+@import "../color-palette/color-palette";
+
+.progress-loader {
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include bgOpacity($GRAY, $OPACITY50);
+  @extend .border-radius;
+}
+.progress-loader-inner {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 0;
+  height: 4px;
+  @extend .bg-color-accent;
+}

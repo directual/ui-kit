@@ -1,0 +1,78 @@
+@import "../../lib/styles/vars.scss";
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+  padding: 2px;
+  border-radius: $BORDER_RADIUS;
+  outline: none;
+  border: solid 1px RGBA($GRAY, $OPACITY75);
+  background-color: RGB($WHITE);
+
+  .toggle-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: $BORDER_RADIUS;
+    border: solid 1px RGBA($GRAY, $OPACITY75);
+    background-color: RGB($WHITE);
+    transition: transform 0.1s ease-out;
+  }
+
+  &:hover {
+    @extend .toggle-hovered;
+  }
+  &:active {
+    @extend .toggle-focused;
+  }
+}
+
+.toggle-on {
+  background-color: RGB($ACCENT);
+  border-color: RGB($ACCENT);
+  .toggle-thumb {
+    transform: translateX(20px);
+    border-color: RGB($ACCENT);
+  }
+}
+
+.toggle-off {
+  background-color: RGB($WHITE);
+  .toggle-thumb {
+    border-color: RGBA($GRAY, $OPACITY75);
+  }
+}
+
+.toggle-hovered {
+  background-color: RGB($SECONDARY);
+  border-color: RGB($SECONDARY);
+  .toggle-thumb {
+    border-color: RGB($SECONDARY);
+  }
+}
+
+.toggle-focused {
+  background-color: RGB($SECONDARY);
+  border-color: RGB($SECONDARY);
+  box-shadow: 0px 0px 0px 2px RGBA($ACCENT,1);
+  .toggle-thumb {
+    border-color: RGB($SECONDARY);
+  }
+}
+
+.toggle-disabled {
+  background-color: RGBA($GRAY, $OPACITY50) !important;
+  border: 1px solid RGBA($GRAY, 0) !important;
+  box-shadow: none;
+  .toggle-thumb {
+    border: 1px solid RGBA($GRAY, $OPACITY50) !important;
+  }
+
+  &:hover {
+    @extend .toggle-disabled;
+  }
+  &:active {
+    @extend .toggle-disabled;
+  }
+}

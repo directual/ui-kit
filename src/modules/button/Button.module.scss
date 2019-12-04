@@ -1,0 +1,141 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.button {
+  box-sizing: border-box;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  line-height: 0;
+  padding: 12px 24px;
+  cursor: pointer;
+
+  @extend .Text_14-24_Black;
+  @extend .color-black;
+  @extend .bg-color-white;
+
+  border: 1px solid RGB($GRAY);
+  @extend .border-radius;
+
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+  }
+
+  &.buttonIcon {
+    padding: 8px 24px 8px 8px;
+  }
+
+  &.buttonDisabled {
+    color: RGB($GRAY);
+    @include bgOpacity($GRAY, $OPACITY50);
+    border-width: 0;
+
+
+    &:hover {
+      //@include colorOpacity($BLACK, $OPACITY50);
+      @include bgOpacity($GRAY, $OPACITY50);
+      border-width: 0;
+    }
+    &:active:focus {
+      color: RGB($GRAY);
+    }
+  }
+
+  &:active:focus {
+    @extend .bg-color-black;
+    @extend .color-white;
+    @extend .border-color-black;
+  }
+
+  &:hover {
+    @extend .bg-color-secondary;
+    @extend .color-white;
+    @extend .border-color-secondary;
+  }
+
+  &.buttonAccent {
+    outline: none;
+    height: 48px;
+    border-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+
+    line-height: 0;
+    cursor: pointer;
+
+    @extend .Text_14-24_White;
+
+    @extend .color-white;
+    @extend .bg-color-accent;
+    @extend .border-color-accent;
+
+    @extend .border-radius;
+
+    .iconWrapper {
+      width: 32px;
+      height: 32px;
+      margin-right: 4px;
+    }
+
+    &.buttonIcon {
+      padding: 8px 24px 8px 8px;
+    }
+
+    &.buttonDisabled {
+      @include colorOpacity($BLACK, $OPACITY50);
+      @include bgOpacity($GRAY, $OPACITY50);
+      border-width: 0;
+
+      &:hover {
+        @include colorOpacity($BLACK, $OPACITY50);
+        @include bgOpacity($GRAY, $OPACITY50);
+        border-width: 0;
+      }
+    }
+
+    &:active:focus {
+      @extend .bg-color-black;
+      @extend .color-white;
+      @extend .border-color-black;
+    }
+
+    &:hover {
+      @extend .bg-color-secondary;
+      @extend .border-color-secondary;
+    }
+  }
+
+  &.linkButton {
+    box-sizing: border-box;
+    outline: none;
+    display: inline;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    @extend .Link_14-24;
+
+    &.buttonDisabled {
+      color: RGB($GRAY);
+      cursor: default;
+    }
+
+    &:hover {
+      @extend .color-secondary;
+      background-color: initial;
+    }
+
+    &:active:focus {
+      @extend .color-black;
+      background-color: initial;
+    }
+  }
+}

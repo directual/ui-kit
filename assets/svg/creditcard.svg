@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>1899ED50-BDC2-44B7-BBDF-5964B49E38E0</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-824.000000, -512.000000)" fill="#222222">
+            <g id=".platform/icon/creditcard" transform="translate(824.000000, 512.000000)">
+                <g id="Combined-Shape">
+                    <path d="M23,9 C24.6568542,9 26,10.3431458 26,12 L26,20 C26,21.6568542 24.6568542,23 23,23 L9,23 C7.34314575,23 6,21.6568542 6,20 L6,12 C6,10.3431458 7.34314575,9 9,9 L23,9 Z M24,16 L8,16 L8,20 C8,20.5522847 8.44771525,21 9,21 L23,21 C23.5522847,21 24,20.5522847 24,20 L24,16 Z M23,11 L9,11 C8.44771525,11 8,11.4477153 8,12 L8,13 L24,13 L24,12 C24,11.4477153 23.5522847,11 23,11 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

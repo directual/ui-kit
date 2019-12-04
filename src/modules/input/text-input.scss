@@ -1,0 +1,86 @@
+@import './base.scss';
+
+.input-text-reset {
+  padding: 0;
+}
+
+.str-text-input {
+  @include with-box($GRAY, 1px, $OPACITY75);
+  @include with-input($BLACK);
+  @include with-close($GRAY);
+  @include with-placeholder(24px);
+  padding: 0 24px;
+  .close {
+    position: relative;
+    .input-spinner-wrapper {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      z-index: -1;
+    }
+    .input-icon-wrapper {
+      width: 32px;
+    }
+  }
+  .text-input-placeholder {
+    height: 15px;
+    display: flex;
+    z-index: 1;
+    .search {
+      position: relative;
+      margin-left: -12px;
+      top: -9px;
+      left: -4px;
+      width: 32px;
+    }
+  }
+  input::-ms-clear {  display: none; width : 0; height: 0; }
+  input::-ms-reveal {  display: none; width : 0; height: 0; }
+}
+
+// internal state
+.text-input-hovered {
+  @include with-box($SECONDARY, 2px);
+  @include with-placeholder(23px);
+  padding: 0 23px;
+}
+
+// internal state
+.text-input-focused {
+  @include with-box($ACCENT, 2px);
+  @include with-placeholder(23px);
+  padding: 0 23px;
+}
+
+// external state
+.text-input-normal {}
+
+// external state
+.text-input-disabled {
+  @include with-box(RGBA($GRAY, 0), 2px);
+  @include with-placeholder(24px);
+  @include with-input($GRAY);
+  background-color: RGBA($GRAY, $OPACITY50);
+  input[type="text"] {
+    color: $GRAY;
+  }
+  .close {
+    cursor: initial;
+  }
+}
+
+// external state
+.text-input-error {
+  @include with-placeholder(24px);
+  @include with-box($RED, 2px);
+}
+
+// external state
+.text-input-verified {
+  @include with-placeholder(24px);
+  @include with-box($GREEN, 2px);
+}
+
+.text-input-read-only {
+  cursor: default;
+}

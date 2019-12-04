@@ -1,0 +1,32 @@
+@import "../../lib/styles/vars";
+@import "../fonts-example/Fonts";
+
+.badge {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  .badgeCount {
+    &.relative {
+      position: absolute;
+      right: 0;
+      top: -16px;
+      transform: translateX(50%);
+    }
+    display: block;
+    border-radius: 16px;
+    background-color: RGB($RED);
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    @extend .Subheader_14-24_White;
+
+    .text {
+      @extend .Text_14-24_Black;
+      color: $WHITE;
+      line-height: 24px;
+    }
+  }
+}

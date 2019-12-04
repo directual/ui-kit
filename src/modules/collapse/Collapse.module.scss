@@ -1,0 +1,45 @@
+@import "../../lib/styles/vars.scss";
+@import '../fonts-example/Fonts.scss';
+
+.collapse {
+  width: 100%;
+
+  & .collapse-panel {
+    width: 100%;
+    // edge issue when icon background covered border
+    overflow: hidden;
+    border-bottom: 1px solid RGBA($GRAY, $OPACITY25);
+
+    & .panel-header {
+      width: 100%;
+      border: none;
+      background: RGB($WHITE);
+      display: flex;
+      align-items: center;
+      padding-top: 4px;
+      padding-bottom: 3px;
+      cursor: pointer;
+
+      & .panel-header__collapse-icon {
+        margin-right: 4px;
+        margin-left: 5px;
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+      }
+
+      & .panel-header__label {
+        position: relative;
+        top: -1px;
+
+        @extend .Subheader_14-24_Black;
+      }
+    }
+
+    & .panel-body {
+      padding: 9px 0 15px 41px;
+      @extend .Text_14-24_Black;
+    }
+  }
+}
+

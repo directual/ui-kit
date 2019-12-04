@@ -1,0 +1,25 @@
+@import "../color-palette/color-palette";
+
+.spinner {
+  border: 2px solid transparent;
+  @include topBorder(2px, $ACCENT);
+  @include rightBorder(2px, $ACCENT);
+  @include leftBorder(2px, $ACCENT);
+  border-radius: 50%;
+  animation: spin 1.5s cubic-bezier(0.39, 0.88, 0.88, 0.39) infinite;
+}
+
+.small {
+  width: 18px;
+  height: 18px;
+}
+
+.big {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

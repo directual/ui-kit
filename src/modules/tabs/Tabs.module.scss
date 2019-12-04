@@ -1,0 +1,27 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.tabWrapper {
+  position: relative;
+  margin-bottom: 32px;
+  .tab {
+    position: relative;
+    height: 48px;
+    @extend .Subheader_14-24_Gray;
+    margin: 0 32px 0 0px;
+    padding: 12px 0px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    background-color: inherit;
+  }
+  .selected {
+    border-bottom: 2px solid RGB($ACCENT);
+  }
+  .tab:hover,
+  .tab:active {
+    color: RGB($BLACK);
+  }
+}

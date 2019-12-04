@@ -1,0 +1,32 @@
+@import "../../../lib/styles/vars";
+@import "../common.module";
+
+
+.selected-option {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  height: 24px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+.selected-with-icon {
+  margin-left: 19px;
+}
+
+.selected-option-icon {
+  position: absolute;
+  left: -36px;
+  top: -4px;
+  color: RGB($GRAY);
+  width: 32px;
+}
+
+.str-text-input:hover .selected-option-icon {
+  color: RGB($BLACK);
+}

@@ -1,0 +1,12 @@
+@import "../color-palette/color-palette";
+
+.buttonGroup {
+  @extend .border-radius;
+  @include border(1px, $GRAY);
+  @extend .bg-color-white;
+  display: inline-flex;
+  height: 48px;
+  button {
+    top: -1px;
+  }
+}

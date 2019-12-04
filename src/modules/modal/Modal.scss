@@ -1,0 +1,175 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+
+.modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+
+  .modal-shadow-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: RGB($WHITE);
+    top: 0;
+    left: 0;
+    .modal-shadow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: RGBA($BLACK, 0.85);
+    }
+  }
+  .modal-content-wrapper {
+    max-width: 1570px;
+    min-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-column-gap: 24px;
+    position: relative;
+    box-sizing: border-box;
+
+    .modal-header-wrapper {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      height: 104px;
+      .modal-header {
+        position: relative;
+        height: 104px;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.2s;
+        display: grid;
+        grid-template-columns: repeat(22, 1fr);
+        grid-column-gap: 24px;
+        .header {
+          grid-column-start: 1;
+          grid-column-end: 11;
+          justify-self: start;
+          align-self: center;
+          @extend .Header_32-40_White;
+        }
+        .buttons {
+          grid-column-start: 12;
+          grid-column-end: 23;
+          justify-self: end;
+          align-self: center;
+          display: flex;
+        }
+        .buttons button {
+          margin-left: 12px;
+        }
+      }
+
+      .modal-header-scrolled {
+        background-color: RGB($WHITE);
+        .header {
+          grid-column-start: 2;
+          color: RGB($BLACK);
+        }
+        .buttons {
+          grid-column-end: 22;
+        }
+      }
+    }
+
+    .modal-content {
+      position: relative;
+      overflow: auto;
+      height: calc(100vh - 104px);
+      grid-column-start: 2;
+      grid-column-end: 24;
+
+      .no-tabs {
+        margin-top: 24px;
+      }
+
+      // todo если понадобится повесить стили на модалку с табами - уже реализован класс
+      .with-tabs {
+        overflow: auto;
+        height: calc(100vh - 104px - 135px);
+      }
+
+      .animation-wrapper {
+        opacity: 0;
+        position: relative;
+        animation-name: appearence;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        animation-duration: 0.4s;
+        animation-delay: 0.1s;
+        background-color: RGB($WHITE);
+        padding-top: 24px;
+
+        min-height: calc(100vh - 128px);
+      }
+
+      .modal-body {
+        display: grid;
+        grid-template-columns: repeat(22, 1fr);
+        grid-column-gap: 24px;
+        overflow: auto;
+        background-color: RGB($WHITE);
+        padding-bottom: 24px;
+
+        .column-big {
+          grid-column-start: 2;
+          grid-column-end: 22;
+        }
+        .column-middle {
+          grid-column-start: 2;
+          grid-column-end: 15;
+        }
+        .column-small-1 {
+          grid-column-start: 2;
+          grid-column-end: 8;
+        }
+        .column-small-2 {
+          grid-column-start: 9;
+          grid-column-end: 15;
+        }
+        .column-small-3 {
+          grid-column-start: 16;
+          grid-column-end: 22;
+        }
+        .fixed-column {
+          overflow: hidden;
+          height: calc(100vh - 176px);
+        }
+        .modal-tab-wrapper {
+          display: flex;
+          grid-column-start: 1;
+          grid-column-end: 23;
+          .str-tabs {
+            width: 100%;
+            .str-tabs-bar {
+              display: grid;
+              grid-template-columns: repeat(22, 1fr);
+              grid-column-gap: 24px;
+              .str-tabs-nav-container {
+                grid-column-start: 2;
+                grid-column-end: 22;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes appearence {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    overflow: auto;
+  }
+}

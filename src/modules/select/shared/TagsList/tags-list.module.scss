@@ -1,0 +1,11 @@
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  height: 32px;
+  margin-right: 48px;
+}
+
+.tags-item {
+  margin-right: 4px;
+}

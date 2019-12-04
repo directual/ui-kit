@@ -1,0 +1,72 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.radio-wrapper {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  padding-right: 4px;
+  .radio {
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 50%;
+      border: solid 1px rgba(142, 142, 142, 0.75);
+      margin: 6px 11px 6px 1px;
+      outline: none;
+    }
+
+    input[type="radio"]:hover {
+      border: solid 2px RGB($SECONDARY);
+    }
+
+    input[type="radio"]:disabled{
+      cursor: not-allowed;
+      opacity: 0.5;
+      @extend .bg-color-gray;
+    }
+
+    input[type="radio"]:disabled:hover{
+      border: none !important;
+    }
+
+    input[type="radio"]:focus{
+      box-shadow: 0 0 0 2px RGB($ACCENT);
+      border: none;
+    }
+
+    input[type="radio"]:active{
+      box-shadow: none;
+      @extend .bg-color-black;
+      border: solid 1px RGB($BLACK);
+    }
+
+    input[type="radio"]:checked{
+      border: solid 5px RGB($ACCENT);
+    }
+
+    input[type="radio"]:hover:checked {
+      border: solid 5px RGB($SECONDARY);
+    }
+
+    input[type="radio"]:focus:checked {
+      box-shadow: 0 0 0 2px RGB($ACCENT);
+      border: solid 5px RGB($SECONDARY);
+    }
+
+    input[type="radio"]:active:checked {
+      box-shadow: none;
+      border: solid 5px RGB($BLACK);
+      background: none;
+    }
+  }
+  :last-child {
+    margin-bottom: 5px;
+    @extend .Text_14-24_Black;
+  }
+}

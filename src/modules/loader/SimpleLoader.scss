@@ -1,0 +1,25 @@
+@import "../color-palette/color-palette";
+
+.loader {
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include bgOpacity($GRAY, $OPACITY50);
+  @extend .border-radius
+}
+.loader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -33.68%;
+  width: 33.68%;
+  height: 4px;
+  @extend .bg-color-accent;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  from {left: -33.68%; width: 33.68%;}
+  to {left: 100%;}
+}

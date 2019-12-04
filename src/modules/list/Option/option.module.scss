@@ -1,0 +1,169 @@
+@import '../../color-palette/index';
+@import '../../../lib/styles/fontClasses';
+@import '../../../lib/styles/vars';
+
+$height: 32px;
+$padding-top: 4px;
+$padding-left: 14px;
+$border: 2px;
+
+.option {
+  border-radius: $BORDER_RADIUS;
+  border: solid $border RGB($WHITE);
+  padding: 0 $padding-left;
+  position: relative;
+  min-height: $height;
+  cursor: default;
+  outline: none;
+  text-align: left;
+  display: flex;
+  background-color: inherit;
+  @extend .Text_14-24_Black;
+
+  .option-text {
+    .option-value {
+      position: relative;
+      //margin-top: 4px;
+      //margin-bottom: 4px;
+      @extend .Text_14-24_Black;
+      //height: 20px;
+      display: flex;
+    }
+    .option-multiline {
+      @extend .Comment_12-16;
+      //height: 16px;
+      position: relative;
+      //top: -6px;
+    }
+  }
+
+  .option-icon {
+    position: relative;
+    display: block;
+    margin-left: -16px;
+    color: RGB($GRAY);
+    width: 32px;
+    //height: 32px;
+    min-width: 32px;
+    height: 28px;
+    top: -2px;
+  }
+
+  &.option-selected {
+    border-color: RGBA($GRAY, 0);
+    background-color: RGBA($GRAY, $OPACITY25);
+
+    .option-icon {
+      color: RGB($BLACK);
+    }
+  }
+
+  &.option-hovered {
+    border-color: RGB($SECONDARY);
+    .option-icon {
+      color: RGB($SECONDARY);
+    }
+  }
+
+  &.option-flat {
+    position: relative;
+  }
+
+  &.option-in-group-multiline {
+    margin-left: 2px;
+  }
+
+  &.option-with-icon {
+    position: relative;
+    .option-value {
+      padding-top: 2px;
+    }
+  }
+
+  &.option-multiline-without-icon {
+    min-height: unset;
+
+    .option-text {
+      height: 44px;
+      .option-value {
+        padding-top: 2px;
+      }
+      .option-multiline {
+        margin-top: -2px;
+        position: absolute;
+      }
+    }
+  }
+  &.option-multiline-with-icon {
+    min-height: unset;
+
+    .option-text {
+      height: 44px;
+
+      .option-value {
+        padding-top: 2px;
+      }
+      .option-multiline {
+        margin-top: -2px;
+        position: absolute;
+      }
+    }
+    .option-icon {
+      top: 6px;
+      // left: 7px;
+    }
+  }
+
+  &.tree-option {
+    margin-left: 0;
+    &.iconed-tree-option {
+      & .option-icon {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &:active {
+    border-color: RGB($BLACK);
+    background-color: RGB($BLACK);
+    color: RGB($WHITE);
+    .option-icon {
+      color: RGB($WHITE);
+    }
+    p {
+      color: RGB($WHITE);
+    }
+    .option-text {
+      color: RGB($WHITE);
+      .option-value {
+        color: RGB($WHITE);
+      }
+      .option-multiline {
+        color: RGB($WHITE);
+      }
+    }
+  }
+}
+
+.option-group-name {
+  padding: 0 15px;
+  height: $height;
+  @extend .Comment_12-16;
+  display: flex;
+  align-items: center;
+  min-height: $height;
+}
+
+.checkbox-option {
+  &.checkbox-option_multiline {
+    & .multiline-content {
+      display: flex;
+      flex-direction: column;
+      & .multiline-text {
+        @extend .Comment_12-16;
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+}

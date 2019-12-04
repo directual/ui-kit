@@ -1,0 +1,29 @@
+@import "../../lib/styles/vars.scss";
+@import '../fonts-example/Fonts.scss';
+
+
+.key-value {
+  & .key-value__table {
+    border-collapse: separate; 
+    border-spacing: 24px 16px; 
+
+    & .row {
+      & .row__key, .row__value {
+        padding: 0;
+        vertical-align: top;
+        text-align: left;
+        line-height: 1.74;
+      }
+
+      & .row__key {
+        position: relative;
+        right: -1px;
+        @extend .Subheader_14-24_Gray;
+      }
+
+      & .row__value {
+        @extend .Text_14-24_Black;
+      }
+    }
+  }
+}

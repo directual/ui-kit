@@ -1,0 +1,45 @@
+@import "../color-palette/color-palette";
+
+.iconButton {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  box-shadow: none;
+  min-width: 48px;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+
+  @extend .color-gray;
+  background-color: transparent;
+
+  .buttonIconWrapper {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+  }
+
+  &.buttonDisabled {
+    @include colorOpacity($GRAY, $OPACITY50);
+    border-width: 0;
+    cursor: not-allowed;
+
+    &:hover {
+      @include colorOpacity($GRAY, $OPACITY50);
+      border-width: 0;
+    }
+  }
+
+  &:active:focus {
+    @extend .color-black;
+  }
+
+  &:hover {
+    @extend .color-secondary;
+  }
+}

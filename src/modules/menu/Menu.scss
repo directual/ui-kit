@@ -1,0 +1,40 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+
+.card-menu {
+  .upper-border {
+    margin: 0 32px;
+    box-sizing: border-box;
+    width: auto;
+    border-top: 1px solid RGB($GRAY);
+  }
+  .menu-container-wrapper {
+    margin: 0 16px;
+    box-sizing: border-box;
+    height: 48px;
+    margin-top: 7px;
+    margin-bottom: 8px;
+    .menu-container {
+      display: flex;
+      flex-wrap: nowrap;
+      position: relative;
+      align-items: center;
+      height: inherit;
+      .default-menu-actions-wrapper {
+        //height: inherit;
+        margin: 0 16px;
+      }
+      .expand {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .expand-content {
+    width: 100%;
+    border-bottom-left-radius: $BORDER_RADIUS;
+    border-bottom-right-radius: $BORDER_RADIUS;
+  }
+}

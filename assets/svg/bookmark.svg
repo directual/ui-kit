@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>C7CAE863-1C08-4C6A-9055-A678B0246569</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-656.000000, -400.000000)" fill="#222222">
+            <g id=".platform/icon/bookmark" transform="translate(656.000000, 400.000000)">
+                <g id="Rectangle">
+                    <path d="M14.0476259,19.039308 C15.1710951,18.0763344 16.8289049,18.0763344 17.9523741,19.039308 L21,21.6515587 L21,9 L11,9 L11,21.6515587 L14.0476259,19.039308 Z M11,7 L21,7 C22.1045695,7 23,7.8954305 23,9 L23,23.8257794 C23,24.3780641 22.5522847,24.8257975 22,24.8257975 C21.7612887,24.8257975 21.5304517,24.7403872 21.3492086,24.585036 L16.6507914,20.5578212 C16.2763016,20.23683 15.7236984,20.23683 15.3492086,20.5578212 L10.6507914,24.585036 C10.2314655,24.9444581 9.60016555,24.8958966 9.2407434,24.4765707 C9.08539216,24.2953276 9,24.0644906 9,23.8257794 L9,9 C9,7.8954305 9.8954305,7 11,7 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

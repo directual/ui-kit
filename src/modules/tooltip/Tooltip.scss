@@ -1,0 +1,40 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.stb-tooltip-wrapper {
+  position: relative;
+  .stb-tooltip {
+    position: absolute;
+    z-index: 9999;
+    display: block;
+    left: -12px;
+    margin-top: 8px;
+    background-color: RGB($BLACK);
+    @extend .bg-color-black;
+    @extend .border-radius;
+    min-height: 24px;
+    padding: 12px 24px;
+    .stb-tooltip-message {
+      //width: max-content;
+      max-width: 464px;
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      width: -o-max-content;
+      width: -ms-max-content;
+      @extend .Text_14-24_White;
+    }
+    .arrow-up {
+      position: absolute;
+      top: -8px;
+      left: 28px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid RGB($BLACK);
+     }
+  }
+  .stb-tooltip-hidden {
+    display: none;
+  }
+}

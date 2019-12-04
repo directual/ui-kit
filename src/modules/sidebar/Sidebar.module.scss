@@ -1,0 +1,19 @@
+@import "../color-palette/color-palette";
+
+.sidebar {
+  width: 80px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  @extend .bg-color-white;
+  .groupIconWrapper {
+    width: 48px;
+    margin: 0 auto;
+    padding-top: 32px;
+  }
+  .groupIconWrapper > * {
+    position: relative;
+    display: flex;
+    margin-bottom: 8px;
+  }
+}

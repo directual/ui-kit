@@ -1,0 +1,23 @@
+@import '../../lib/styles/fontClasses.scss';
+
+.header {
+  @extend .Text_14-24_Black;
+  height: 24px;
+  margin-bottom: 4px;
+  margin-left: 2px;
+}
+
+.refresh {
+  margin-top: 8px;
+  @extend .Link_14-24;
+  height: 24px;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  margin-top: 8px;
+  .okButton {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,37 @@
+@import './base.scss';
+
+.text-search-input {
+  @include with-box($GRAY, 1px, $OPACITY75);
+  @include with-search($GRAY);
+  @include with-input($BLACK);
+  @include with-close($GRAY);
+  @include with-placeholder(24px + 15px);
+}
+
+// internal state
+.text-search-input-hovered {
+  @include with-box($SECONDARY, 2px);
+  @include with-placeholder(24px + 14px);
+  @include with-search($BLACK);
+}
+
+// internal state
+.text-search-input-focused {
+  @include with-box($ACCENT, 2px);
+  @include with-placeholder(24px);
+  @include without-search();
+}
+
+// external state
+.text-search-input-normal {}
+
+// external state
+.text-search-input-disabled {
+  @include with-box(RGBA($GRAY, 0), 2px);
+  @include with-placeholder(24px + 14px);
+  @include with-input($GRAY);
+  background-color: RGBA($GRAY, $OPACITY50);
+  input[type="text"] {
+    color: $GRAY;
+  }
+}

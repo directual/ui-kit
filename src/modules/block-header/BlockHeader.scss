@@ -1,0 +1,23 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.block-header {
+  height: 47px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: RGBA($GRAY, 0.25);
+  .text-wrapper {
+    display: flex;
+    align-items: center;
+    .text-secondary {
+      margin-right: 8px;
+      @extend .Subheader_14-24_Gray;
+    }
+    .text-accent {
+      @extend .Subheader_14-24_Black;
+    }
+  }
+}

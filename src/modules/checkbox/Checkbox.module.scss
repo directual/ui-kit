@@ -1,0 +1,187 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+$SVG_ARROW: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4NCiAgICA8cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik04IDEyLjU4Nmw2LjI5My02LjI5M2ExIDEgMCAwIDEgMS40MTQgMS40MTRsLTcgN2ExIDEgMCAwIDEtMS40MTQgMGwtMy0zYTEgMSAwIDAgMSAxLjQxNC0xLjQxNEw4IDEyLjU4NnoiLz4NCjwvc3ZnPg==";
+$SVG_INDETERMINATE: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4NCiAgICA8cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMiIgeD0iNCIgeT0iOSIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIiByeD0iMSIvPg0KPC9zdmc+";
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 4px;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  .checkbox {
+    height: 32px;
+    width: 32px;
+    .checkbox-input {
+      border-radius: 3px;
+      @extend .bg-color-white;
+    }
+  }
+
+  .checkbox-children {
+    position: relative;
+    padding: 4px 0 4px 0;
+    @extend .Text_14-24_Black;
+  }
+
+  .checkbox-inner {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    border: solid 1px RGBA($GRAY, $OPACITY75);
+    margin: 6px 11px 6px 1px;
+    outline: none;
+
+    &.checked {
+      @extend .bg-color-accent;
+      border: solid 1px RGB($ACCENT);
+      background-image: url($SVG_ARROW);
+      background-position: center;
+
+    }
+    &.indeterminate {
+      @extend .bg-color-accent;
+      background-image: url($SVG_INDETERMINATE);
+      background-position: -1px -1px;
+    }
+
+  input[type="checkbox"]:hover{
+    border: solid 2px RGB($SECONDARY) !important;
+  }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: $OPACITY50;
+      @extend .bg-color-gray;
+      border: none;
+
+      &.indeterminate {
+        cursor: not-allowed;
+        opacity: $OPACITY50;
+        @extend .bg-color-gray;
+        border: none;
+      }
+
+  input[type="checkbox"]:hover:disabled:checked {
+    cursor: not-allowed;
+    opacity: $OPACITY50;
+    @extend .bg-color-gray;
+    border: none;
+  }
+
+  input[type="checkbox"]:focus{
+    box-shadow: 0 0 0 2px RGB($ACCENT);
+    border: none;
+  }
+
+  input[type="checkbox"]:active{
+    box-shadow: none;
+    @extend .bg-color-black;
+    border: solid 1px RGB($BLACK);
+    background-image: none !important;
+  }
+
+  input[type="checkbox"]:checked{
+    @extend .bg-color-accent;
+    border: solid 1px RGB($ACCENT);
+    background-image: url($SVG_ARROW);
+    background-position: center;
+  }
+
+  input[type="checkbox"]:hover:checked {
+    @extend .bg-color-secondary;
+    border: solid 2px RGB($SECONDARY);
+  }
+
+  input[type="checkbox"]:focus:checked {
+    @extend .bg-color-secondary;
+    border: solid 2px RGB($SECONDARY);
+  }
+}
+.indeterminate {
+  .checkbox {
+    input[type="checkbox"]{
+      @extend .bg-color-accent;
+      background-image: url($SVG_INDETERMINATE);
+      background-position: center;
+    }
+
+    input[type="checkbox"]:checked{
+      @extend .bg-color-accent;
+      border: solid 1px RGB($ACCENT);
+      background-image: url($SVG_INDETERMINATE);
+      background-position: center;
+    }
+
+    input[type="checkbox"]:active{
+      box-shadow: none;
+      @extend .bg-color-secondary;
+      border: solid 1px RGB($SECONDARY);
+      background-image: url($SVG_INDETERMINATE) !important;
+      background-position: center;
+    }
+    input[type="checkbox"]:disabled{
+      cursor: not-allowed;
+      opacity: $OPACITY50;
+      @extend .bg-color-gray;
+      border: none;
+    }
+
+        &.indeterminate {
+          cursor: not-allowed;
+          opacity: $OPACITY50;
+          @extend .bg-color-gray;
+          border: none;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    // https://a11yproject.com/posts/how-to-hide-content/
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+
+    &:focus:not(:disabled) + .checkbox-inner {
+      box-shadow: 0 0 0 2px RGB($ACCENT);
+      border: none;
+
+      &.checked {
+        @extend .bg-color-secondary;
+      }
+
+      &.indeterminate {
+        @extend .bg-color-secondary;
+      }
+    }
+
+    &:active:not(:disabled) + .checkbox-inner {
+      box-shadow: none;
+      @extend .bg-color-black;
+      border: solid 1px RGB($BLACK);
+      background-image: none !important;
+
+      &.indeterminate {
+        box-shadow: none;
+        @extend .bg-color-secondary;
+        border: solid 1px RGB($SECONDARY);
+        background-image: url($SVG_INDETERMINATE) !important;
+        background-position: center;
+      }
+    }
+  }
+}

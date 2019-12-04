@@ -1,0 +1,195 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.tables-wrapper {
+  display: block;
+  width: inherit;
+  height: inherit;
+  overflow: auto;
+  position: relative;
+  min-width: 100%;
+
+  .table-shadow {
+    position: absolute;
+    height: calc(100% + 1px);
+    right: 0px;
+    top: 0;
+    width: 4px;
+    background: linear-gradient(to right, rgba(142, 142, 142, 0.25) 10%, transparent);
+  }
+  .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    thead td {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: RGB($WHITE);
+    }
+    .start-buffer {
+      height: 0px;
+    }
+    .cell-text {
+      position: relative;
+      padding-left: 8px;
+      padding-right: 4px;
+      height: inherit;
+      display: flex;
+      align-items: center;
+    }
+    .header {
+      background-color: RGB($WHITE);
+      .header-row {
+        background-color: RGB($WHITE);
+        .cell-with-icon {
+          width: -webkit-fill-available;
+          justify-content: space-between;
+          padding-left: 0;
+        }
+      }
+      .main-header-row {
+        td {
+          background-color: RGB($WHITE);
+          border-top: 1px solid RGBA($GRAY, 0.25);
+          border-bottom: none !important;
+          //white-space: nowrap;
+          //text-overflow: ellipsis;
+          //overflow: hidden;
+          .cell-text {
+            @extend .Subheader_14-24_Black;
+          }
+        }
+      }
+      .header-row, .main-header-row {
+        height: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        //position: relative;
+        td {
+          height: 40px;
+          max-height: 40px;
+          @extend .Subheader_14-24_Gray;
+          border-bottom: 2px solid RGBA($GRAY, 0.25);
+          z-index: 2;
+          .color-wrapper {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 0px 5px 0px 8px;
+          }
+        }
+        .additional-margin {
+          top: 41px;
+        }
+        .accent-cell {
+          background-color: RGBA($GRAY, 0.25);
+          @extend .Subheader_14-24_Black;
+        }
+        .sortable-cell {}
+        .sortable-cell:hover {
+          color: RGB($WHITE);
+          background-color: RGB($SECONDARY);
+        }
+        .sortable-cell:active {
+          color: RGB($WHITE);
+          background-color: RGB($BLACK);
+        }
+        .cell-wrapper {
+          width: -webkit-fill-available;
+          display: flex;
+          box-sizing: border-box;
+          height: 22px;
+          align-items: center;
+          justify-content: space-between;
+          .col-sort-icon {
+            height: 32px;
+            width: 32px;
+            display: block;
+          }
+        }
+      }
+    }
+    .table-body {
+      .row {
+        height: 40px;
+        min-height: 40px;
+        td {
+          height: 40px;
+          max-height: 40px;
+          @extend .Text_14-24_Black;
+          border-bottom: 1px solid RGBA($GRAY, 0.25);
+          z-index: -1;
+          max-width: 300px;
+          background-color: RGB($WHITE);
+          .color-wrapper {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 0px 5px 0px 8px;
+          }
+        }
+        .checkbox-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: left;
+          position: relative;
+          .cell-text {
+            padding-left: 0px;
+          }
+        }
+      }
+      .row-checked {
+        td {
+          border-bottom: 1px solid RGBA($GRAY, 0.25);
+          .color-wrapper {
+            background-color: RGBA($GRAY, 0.25);
+          }
+        }
+      }
+    }
+  }
+  .color-wrapper {
+    height: inherit;
+    width: inherit;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: RGB($WHITE);
+  }
+  td {
+    padding: 0;
+    //background-color: $WHITE;
+  }
+
+  .fixed-column {
+    position: sticky;
+    left: 0;
+    z-index: 3 !important;
+  }
+
+  .fixed-column-header {
+    position: sticky;
+    left: 0;
+    z-index: 4 !important;
+  }
+  .table-checkbox {
+    width: auto;
+    padding-right: 0;
+  }
+  .cell-shadow {
+    box-shadow: 1px 0px 3px -3px RGBA(0,0,0,0.75);
+  }
+}
+.table-loader {
+  height: 60px;
+  width: 40px;
+  padding: 10px 0;
+  position: sticky;
+  left: 50%;
+}
+.table-loader-relative {
+  height: 60px;
+  width: inherit;
+  position: relative;
+}

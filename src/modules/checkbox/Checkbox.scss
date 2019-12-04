@@ -1,0 +1,22 @@
+@import "../fonts-example/Fonts";
+
+.multiline-wrapper {
+  height: 48px;
+  position: relative;
+  display: flex;
+  .checkbox-multiline {
+    position: absolute;
+    @extend .Comment_12-16;
+    height: 16px;
+    top: 20px;
+    left: 0px;
+    width: auto;
+    white-space: nowrap;
+  }
+  .checkbox-storybook {
+    align-items: flex-start;
+    :nth-child(2) {
+      top: 4px;
+    }
+  }
+}

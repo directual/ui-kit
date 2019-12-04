@@ -1,0 +1,72 @@
+@import "../../color-palette/color-palette";
+@import "../../fonts-example/Fonts";
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  .item {
+    width: 100%;
+
+    .mainInfo {
+      align-items: center;
+      display: flex;
+      width: 100%;
+
+      .status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+
+        .spinner {
+          margin: 5px;
+        }
+      }
+
+      .progressIcon {
+        width: 32px;
+        height: 32px;
+
+        &.loaded {
+          @extend .color-gray;
+        }
+
+        &.error {
+          @extend .color-red;
+        }
+
+        &.notSupported {
+          @extend .color-red;
+        }
+      }
+
+      .fileName {
+        @extend .Text_14-24_Black;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .cancelIcon {
+        @extend .color-gray;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+      }
+    }
+
+    .comment {
+      @extend .Comment_12-16;
+      margin-left: 48px;
+      margin-bottom: 16px;
+      .tryAgain {
+        @extend .color-accent;
+        cursor: pointer;
+      }
+    }
+  }
+}

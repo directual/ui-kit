@@ -1,0 +1,47 @@
+@import "../../../lib/styles/vars";
+
+$border: 2px;
+
+.arrow-down {
+  pointer-events: none;
+  position: absolute;
+  cursor: pointer;
+  color: RGB($GRAY);
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  right: 10px;
+  &-open {
+    pointer-events: auto;
+    transform: rotate(180deg);
+  }
+  &-hovered {
+    color: RGB($BLACK);
+  }
+  &-focused {
+    color: $ACCENT;
+  }
+}
+
+.base-with-icon {
+  padding-left: 41px;
+}
+
+.empty-list-option {
+  border: solid $border RGB($WHITE) !important;
+  color: RGB($BLACK) !important;
+  background-color: inherit !important;
+  .icon-class {
+    display: none;
+  }
+}
+
+.empty-list-option:active {
+  color: RGB($BLACK) !important;
+  .option-icon {
+    color: RGB($WHITE);
+  }
+  span {
+    color: RGB($BLACK) !important;
+  }
+}

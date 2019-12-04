@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>F1CC2B31-E51D-4338-B27A-2C4F131F32B7</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-432.000000, -456.000000)" fill="#222222">
+            <g id=".platform/icon/stop" transform="translate(432.000000, 456.000000)">
+                <g id="form">
+                    <path d="M12,11 C11.4477153,11 11,11.4477153 11,12 L11,20 C11,20.5522847 11.4477153,21 12,21 L20,21 C20.5522847,21 21,20.5522847 21,20 L21,12 C21,11.4477153 20.5522847,11 20,11 L12,11 Z M12,9 L20,9 C21.6568542,9 23,10.3431458 23,12 L23,20 C23,21.6568542 21.6568542,23 20,23 L12,23 C10.3431458,23 9,21.6568542 9,20 L9,12 C9,10.3431458 10.3431458,9 12,9 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

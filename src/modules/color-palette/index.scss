@@ -1,0 +1,47 @@
+@import "./color-palette";
+
+.default-colors {
+  display: flex;
+  justify-content: flex-start;
+
+  .block {
+    width: 208px;
+    height: 146px;
+    margin-right: 32px;
+
+    .color-preview {
+      width: 208px;
+      height: 96px;
+
+      &.bg-color-white {
+        width: 206px;
+        height: 94px;
+        border:1px solid $GRAY;
+      }
+    }
+
+    .color-title {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.body-group {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+
+  .item {
+    height: 48px;
+    width: 48px;
+  }
+  .card-item {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

@@ -1,0 +1,85 @@
+@import "../color-palette/color-palette";
+@import "../fonts-example/Fonts";
+
+.tags-container {
+  display: flex;
+}
+.tag {
+  position: relative;
+  height: 32px;
+  width: fit-content;
+  border-radius: $BORDER_RADIUS;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: solid 2px RGBA($GRAY, 0);
+  outline: none;
+  margin-right: 4px;
+
+  .tag-text {
+    height: 24px;
+    text-align: center;
+    position: relative;
+    @extend .Text_14-24_Black;
+  }
+
+  &.tag-default {
+    background-color: RGBA($GRAY, 0.25);
+  }
+}
+
+.tag-without-icon {
+  padding: 0;
+  .tag-text-without-icon {
+    margin: 0px 16px;
+  }
+}
+
+.tag-with-icon {
+  padding: 0;
+  .tag-text-with-icon {
+    margin: 0px 32px 0px 16px;
+  }
+  .tag-icon {
+    @extend .color-gray;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+  }
+}
+
+.tag:active {
+  border: solid 2px RGB($BLACK);
+  background-color: RGB($BLACK);
+  .tag-icon {
+    color: RGB($WHITE);
+  }
+}
+
+.tag:active .tag-text {
+  @extend .color-white;
+}
+
+.tag:hover {
+  border: solid 2px RGB($SECONDARY);
+  @extend .bg-color-white;
+  .tag-icon {
+    @extend .color-secondary;
+  }
+}
+
+.tag:disabled {
+  background-color: RGBA($GRAY, 0.5);
+  border: solid 2px RGBA($GRAY, 0);
+  cursor: not-allowed;
+}
+
+.tag:disabled .tag-text {
+  @extend .color-gray;
+}
+.tag:disabled:active .tag-text {
+  @extend .color-gray;
+}

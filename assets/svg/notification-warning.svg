@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>25631101-D2F4-4928-A64C-E61781EB7AE1</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-936.000000, -248.000000)" fill="#222222">
+            <g id=".platform/icon/notification-warning" transform="translate(936.000000, 248.000000)">
+                <g id="Combined-Shape">
+                    <path d="M16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 C7.163444,32 -8.8817842e-16,24.836556 -8.8817842e-16,16 C-8.8817842e-16,7.163444 7.163444,0 16,0 Z M16,23 C15.4477153,23 15,23.4477153 15,24 C15,24.5522847 15.4477153,25 16,25 C16.5522847,25 17,24.5522847 17,24 C17,23.4477153 16.5522847,23 16,23 Z M16,8 C15.4477153,8 15,8.44771525 15,9 L15,9 L15,20 C15,20.5522847 15.4477153,21 16,21 C16.5522847,21 17,20.5522847 17,20 L17,20 L17,9 C17,8.44771525 16.5522847,8 16,8 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

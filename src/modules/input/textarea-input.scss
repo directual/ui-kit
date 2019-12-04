@@ -1,0 +1,70 @@
+@import './base.scss';
+@import './text-input.scss';
+@import "../../lib/styles/styles.scss";
+
+// TODO: refactor styles remove duplication!!!!
+.textarea-input {
+  @include with-box($GRAY, 1px, $OPACITY75);
+  @include with-input($BLACK);
+  @include with-textarea-placeholder(24px, 1px);
+  height: inherit !important;
+  padding: 0 !important;
+  overflow-y: hidden;
+  textarea {
+    overflow-y: auto;
+    resize: none;
+    padding: 15px 23px;
+    @extend .scroll-bar;
+  }
+}
+
+// internal state
+.textarea-input-hovered {
+  @include with-box($SECONDARY, 2px);
+  @include with-textarea-placeholder(24px, 2px);
+  textarea {
+    padding: 14px 22px;
+  }
+}
+
+// internal state
+.textarea-input-focused {
+  @include with-box($ACCENT, 2px);
+  @include with-textarea-placeholder(24px, 2px);
+  textarea {
+    padding: 14px 22px;
+  }
+}
+
+// external state
+.textarea-input-normal {}
+
+// external state
+.textarea-input-disabled {
+  @include with-box(RGBA($GRAY, 0), 2px);
+  @include with-textarea-placeholder(24px, 2px);
+  @include with-input($GRAY);
+  background-color: RGBA($GRAY, $OPACITY50);
+  textarea {
+    color: $GRAY;
+    padding: 14px 22px;
+  }
+}
+
+// external state
+.textarea-input-error {
+  @include with-box($RED, 2px);
+  @include with-textarea-placeholder(24px, 2px);
+  textarea {
+    padding: 14px 22px;
+  }
+}
+
+// external state
+.textarea-input-verified {
+  @include with-box($GREEN, 2px);
+  @include with-textarea-placeholder(24px, 2px);
+  textarea {
+    padding: 14px 22px;
+  }
+}

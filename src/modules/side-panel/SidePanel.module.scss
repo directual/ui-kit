@@ -1,0 +1,41 @@
+@import "../color-palette/color-palette";
+@import "../../lib/styles/vars.scss";
+
+.sidePanel {
+  @extend .bg-color-white;
+  position: fixed;
+  padding: 36px 32px 36px 80px;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid RGBA($GRAY, 0.25);
+  background-color: RGB($WHITE);
+
+  &.sidePanelHidden {
+    display: none;
+  }
+
+  .contentBlock {
+    width: 100%;
+  }
+
+  .iconContainer {
+    @extend .color-gray;
+    cursor: pointer;
+    position: absolute;
+    left: 24px;
+    top: 40px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .handle {
+    position: absolute;
+    left: -16px;
+    top: 0;
+    height: 100%;
+  }
+}
+
