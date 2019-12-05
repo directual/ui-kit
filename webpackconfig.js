@@ -91,8 +91,6 @@ const config = {
             options: {
               modules: true,
               sourceMap: false,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              camelCase: true,
             }
           },
           { loader: 'postcss-loader' },
