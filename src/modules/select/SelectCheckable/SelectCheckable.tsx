@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import keyBy from 'lodash/keyBy';
+import cn from 'classnames';
 import SelectBase, { EMPTY_LIST_OPTION_ID } from '../SelectBase/SelectBase';
 import { TOGGLE_SOURCES } from '../../../lib/components/dropdown/DropdownComponent';
 import { OptionsById, SelectCheckableProps } from '../types';
@@ -12,6 +13,7 @@ import {
   emptyListOption, plainSearchFilter, isEmptyList, isLoadingOption,
 } from '../helpers';
 import SelectCheckableOption from '../shared/SelectCheckableOption/SelectCheckableOption';
+import styles from '../common.module.scss';
 
 export const KEY_NAMES = {
   ENTER: 'Enter',
@@ -37,6 +39,8 @@ const SelectCheckable = ({
   const [showHint, setShowHint] = useState(false);
   const [optionsById, setOptionsById] = useState<OptionsById>({});
   const isSearchEnabled = searchable || (typeof onSearch === 'function');
+  const optionMatchSearchString = options.some((option) => option.value === searchString);
+  const showAddTagHint = onCreateNewOption && !isEmpty(searchString) && !optionMatchSearchString;
 
   let visibleOptions = options;
   if (searchable && !isEmpty(searchString) && !onSearch) {
@@ -95,13 +99,20 @@ const SelectCheckable = ({
   );
 
   const renderDropdownOverlay = () => (
-    <List
-      selected={selectedOptionIds}
-      options={visibleOptions}
-      groups={groups}
-      onChange={onChangeHandler}
-      checkable={!isEmptyList(visibleOptions)}
-    />
+    <>
+      {showAddTagHint && (
+        <div className={cn('Comment_12-16', styles.addNewHint)}>
+          {`"${searchString}" добавить новый ↵ `}
+        </div>
+      )}
+      <List
+        selected={selectedOptionIds}
+        options={visibleOptions}
+        groups={groups}
+        onChange={onChangeHandler}
+        checkable={!isEmptyList(visibleOptions)}
+      />
+    </>
   );
 
   const onToggle = (source: string, inputTextRef: RefObject<HTMLInputElement>) => {
@@ -114,7 +125,7 @@ const SelectCheckable = ({
   const onFocusHandler = (_: any, event: FocusEvent<HTMLInputElement>) => onFocus(event);
   const onBlurHandler = () => onBlur(selectedOptionIds);
   const onKeyUpHandler = (e: KeyboardEvent) => {
-    if (e.key === KEY_NAMES.ENTER && onCreateNewOption) {
+    if (e.key === KEY_NAMES.ENTER && onCreateNewOption && !optionMatchSearchString) {
       onCreateNewOption(searchString);
       setSearchString('');
     }
