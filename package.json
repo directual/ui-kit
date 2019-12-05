@@ -1,6 +1,6 @@
 {
   "name": "@directual/ui-kit",
-  "version": "2.1.39",
+  "version": "2.1.40",
   "author": "Directual",
   "main": "dist/main.bundle.js",
   "types": "dist/export.d.ts",
