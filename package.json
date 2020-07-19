@@ -18,7 +18,7 @@
     "@types/react-image-crop": "^8.1.2",
     "@types/storybook__addon-info": "5.2.1",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "2.24.0",
     "node-sass": "^4.11.0",
     "rc-tree": "2.1.0",
